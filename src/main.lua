@@ -98,6 +98,9 @@ function love.draw()
 		end
 
 		love.graphics.rectangle("fill", x, y, PIXEL_SIZE, PIXEL_SIZE)
+
+		love.graphics.setColor(50, 50, 50)
+		love.graphics.rectangle("line", x, y, PIXEL_SIZE, PIXEL_SIZE)
 	end
 
 	-- Draw all food pixels
@@ -107,7 +110,8 @@ function love.draw()
 
 		love.graphics.setColor(255, 25, 25)
 		love.graphics.rectangle("fill", x, y, PIXEL_SIZE, PIXEL_SIZE)
-		love.graphics.setColor(255, 255, 255)
+		love.graphics.setColor(50, 50, 50)
+		love.graphics.rectangle("line", x, y, PIXEL_SIZE, PIXEL_SIZE)
 	end
 end
 
