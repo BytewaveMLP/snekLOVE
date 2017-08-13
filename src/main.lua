@@ -113,7 +113,7 @@ function love.draw()
 	love.graphics.print(string.format("SCORE: %d", score), 10, 10)
 
 	if gameOver then
-		love.graphics.setColor(255, 25, 25)
+		love.graphics.setColor(255, 75, 75)
 		love.graphics.print("GAME OVER - PRESS ENTER", 10, 50)
 	end
 end
