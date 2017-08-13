@@ -17,6 +17,9 @@ FOOD_GROWTH = 3
 -- How often should we spawn food (%/100)
 FOOD_SPAWN_CHANCE = 0.05
 
+-- How many food pixels are allowed to be in play at once?
+FOOD_LIMIT = 5
+
 -- Directions "enum", for easier-to-read code
 Directions       = {}
 Directions.UP    = 1
@@ -156,7 +159,7 @@ function love.update(dt)
 		end
 
 		-- If there's less than 5 food on the table and RNG says we should spawn something...
-		if math.random() < FOOD_SPAWN_CHANCE and #food <= 5 then
+		if math.random() < FOOD_SPAWN_CHANCE and #food < FOOD_LIMIT then
 			local foodX, foodY
 			local validFoodPos = true
 
