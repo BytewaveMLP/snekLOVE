@@ -133,23 +133,21 @@ function love.update(dt)
 
 		if math.random() < 0.05 and #food <= 5 then
 			local foodX, foodY
-			local validFoodPos = false
+			local validFoodPos = true
 
-			while not validFoodPos do
-				foodX = love.math.random(1, GAME_SIZE_PT)
-				foodY = love.math.random(1, GAME_SIZE_PT)
+			foodX = love.math.random(1, GAME_SIZE_PT)
+			foodY = love.math.random(1, GAME_SIZE_PT)
 
-				validFoodPos = true
-
-				for _, block in ipairs(snek) do
-					if foodX == block.x and foodY == block.y then
-						validFoodPos = false
-						break
-					end
+			for _, block in ipairs(snek) do
+				if foodX == block.x and foodY == block.y then
+					validFoodPos = false
+					break
 				end
 			end
 
-			food[#food + 1] = {x = foodX, y = foodY}
+			if validFoodPos then
+				food[#food + 1] = {x = foodX, y = foodY}
+			end
 		end
 
 		timeAcc = 0
