@@ -65,9 +65,7 @@ function love.load()
 
 	score = 0
 
-	gameFont = love.graphics.newFont("fonts/hack.ttf", 25)
-	scoreText = love.graphics.newText(gameFont, "")
-	gameOverText = love.graphics.newText(gameFont, "GAME OVER - PRESS ENTER")
+	love.graphics.setNewFont("fonts/hack.ttf", 25)
 end
 
 function love.draw()
@@ -112,12 +110,11 @@ function love.draw()
 
 	-- Draw info (do this last so it renders on top of stuff)
 	love.graphics.setColor(255, 255, 255)
-	scoreText:set(string.format("SCORE: %d", score))
-	love.graphics.draw(scoreText, 10, 10)
+	love.graphics.print(string.format("SCORE: %d", score), 10, 10)
 
 	if gameOver then
-		love.graphics.setColor(255, 100, 100)
-		love.graphics.draw(gameOverText, 10, 50)
+		love.graphics.setColor(255, 25, 25)
+		love.graphics.print("GAME OVER - PRESS ENTER", 10, 50)
 	end
 end
 
