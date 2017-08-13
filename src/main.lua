@@ -67,14 +67,6 @@ function love.load()
 end
 
 function love.draw()
-	love.graphics.setColor(255, 255, 255)
-	love.graphics.print(string.format("SCORE: %d", score), 10, 10, 0, 2)
-
-	if gameOver then
-		love.graphics.setColor(255, 100, 100)
-		love.graphics.print("GAME OVER - PRESS ENTER", 10, 50, 0, 2)
-	end
-
 	-- Draw the snek
 	for i, pos in ipairs(snek) do
 		local x = pos.x * PIXEL_SIZE
@@ -112,6 +104,15 @@ function love.draw()
 		love.graphics.rectangle("fill", x, y, PIXEL_SIZE, PIXEL_SIZE)
 		love.graphics.setColor(50, 50, 50)
 		love.graphics.rectangle("line", x, y, PIXEL_SIZE, PIXEL_SIZE)
+	end
+
+	-- Draw info (do this last so it renders on top of stuff)
+	love.graphics.setColor(255, 255, 255)
+	love.graphics.print(string.format("SCORE: %d", score), 10, 10, 0, 2)
+
+	if gameOver then
+		love.graphics.setColor(255, 100, 100)
+		love.graphics.print("GAME OVER - PRESS ENTER", 10, 50, 0, 2)
 	end
 end
 
