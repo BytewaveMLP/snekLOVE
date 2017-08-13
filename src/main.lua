@@ -12,7 +12,7 @@ CENTER_POS   = math.floor(GAME_SIZE_PT / 2)
 SNEK_SIZE_INIT = 10
 
 -- How many pixels should the snek grow by when he eats
-FOOD_GROWTH = 3
+FOOD_GROWTH = 5
 
 -- How often should we spawn food (%/100)
 FOOD_SPAWN_CHANCE = 0.05
@@ -64,6 +64,10 @@ function love.load()
 	gameOver = false
 
 	score = 0
+
+	gameFont = love.graphics.newFont("fonts/hack.ttf", 25)
+	scoreText = love.graphics.newText(gameFont, "")
+	gameOverText = love.graphics.newText(gameFont, "GAME OVER - PRESS ENTER")
 end
 
 function love.draw()
@@ -108,11 +112,12 @@ function love.draw()
 
 	-- Draw info (do this last so it renders on top of stuff)
 	love.graphics.setColor(255, 255, 255)
-	love.graphics.print(string.format("SCORE: %d", score), 10, 10, 0, 2)
+	scoreText:set(string.format("SCORE: %d", score))
+	love.graphics.draw(scoreText, 10, 10)
 
 	if gameOver then
 		love.graphics.setColor(255, 100, 100)
-		love.graphics.print("GAME OVER - PRESS ENTER", 10, 50, 0, 2)
+		love.graphics.draw(gameOverText, 10, 50)
 	end
 end
 
