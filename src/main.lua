@@ -163,8 +163,8 @@ function love.update(dt)
 			local foodX, foodY
 			local validFoodPos = true
 
-			foodX = love.math.random(1, GAME_SIZE_PT)
-			foodY = love.math.random(1, GAME_SIZE_PT)
+			foodX = love.math.random(0, GAME_SIZE_PT - 1)
+			foodY = love.math.random(0, GAME_SIZE_PT - 1)
 
 			-- Don't let food spawn on top of snek
 			for _, block in ipairs(snek) do
