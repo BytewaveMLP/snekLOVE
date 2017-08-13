@@ -16,7 +16,7 @@ move ..\temp.zip .\snek.love
 copy /b love.exe+snek.love snek.exe
 del /Q love.exe snek.love
 
-7z a ..\snek.zip .
+7z a ..\snekLOVE.zip .
 
 cd ..
 del /S /Q build
