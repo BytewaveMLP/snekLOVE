@@ -1,5 +1,5 @@
 function love.conf(t)
-	local version = "0.2.0"
+	local version = "0.2.1"
 
 	t.identity = nil
 	t.version = "0.10.2"
