@@ -2,7 +2,7 @@ function love.conf(t)
 	local version = "0.3.1"
 
 	t.identity = nil
-	t.version = "0.10.2"
+	t.version = "11.1"
 	t.console = false
 	t.accelerometerjoystick = false
 	t.externalstorage = false

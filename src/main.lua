@@ -76,24 +76,24 @@ function love.draw()
 
 		if gameOver then
 			-- Ded snek is red snek
-			love.graphics.setColor(255, 100, 100)
+			love.graphics.setColor(1, 0.392, 0.392)
 		else
-			love.graphics.setColor(0, 150, 0)
+			love.graphics.setColor(0, 0.392, 0)
 		end
 
 		-- Head is a different coller
 		if i == #snek then
 			if gameOver then
 				-- Ded snek is red snek
-				love.graphics.setColor(255, 150, 150)
+				love.graphics.setColor(1, 0.588, 0.588)
 			else
-				love.graphics.setColor(0, 200, 0)
+				love.graphics.setColor(0, 0.784, 0)
 			end
 		end
 
 		love.graphics.rectangle("fill", x, y, PIXEL_SIZE, PIXEL_SIZE)
 
-		love.graphics.setColor(50, 50, 50)
+		love.graphics.setColor(0.196, 0.196, 0.196)
 		love.graphics.rectangle("line", x, y, PIXEL_SIZE, PIXEL_SIZE)
 	end
 
@@ -102,18 +102,18 @@ function love.draw()
 		local x = pos.x * PIXEL_SIZE
 		local y = pos.y * PIXEL_SIZE
 
-		love.graphics.setColor(255, 25, 25)
+		love.graphics.setColor(1, 0.098, 0.098)
 		love.graphics.rectangle("fill", x, y, PIXEL_SIZE, PIXEL_SIZE)
-		love.graphics.setColor(50, 50, 50)
+		love.graphics.setColor(0.196, 0.196, 0.196)
 		love.graphics.rectangle("line", x, y, PIXEL_SIZE, PIXEL_SIZE)
 	end
 
 	-- Draw info (do this last so it renders on top of stuff)
-	love.graphics.setColor(255, 255, 255)
+	love.graphics.setColor(1, 1, 1)
 	love.graphics.print(string.format("SCORE: %d", score), 10, 10)
 
 	if gameOver then
-		love.graphics.setColor(255, 75, 75)
+		love.graphics.setColor(1, 0.294, 0.294)
 		love.graphics.print("GAME OVER - PRESS ENTER", 10, 50)
 	end
 end

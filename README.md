@@ -8,4 +8,4 @@ Controls with arrow keys. Press Enter to restart if you lose. Red boxes are food
 
 This game uses [Hack](https://sourcefoundry.org/hack/), a beautiful typeface for source code (and apparently game UI). Major props to the Hack creators; check 'em out if you're looking for a new font for your IDE!
 
-Hack is distrobuted under the terms of the Hack Open Font License. Hack is copyright 2015 by Christopher Simpkins. All Rights Reserved.
+Hack is distributed under the terms of the Hack Open Font License. Hack is copyright 2015 by Christopher Simpkins. All Rights Reserved.
